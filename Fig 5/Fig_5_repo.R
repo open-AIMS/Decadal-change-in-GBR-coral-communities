@@ -633,41 +633,5 @@ secshelf.models_hc_sum <-
 secshelf.models_hc_sum <- secshelf.models_hc_sum |> 
   filter(GROUP_CODE=='HC')
   
-save(secshelf.models_hc_sum,file='secshelf.models_hc_sum.RData')
-load(file='secshelf.models_hc_sum.RData')
-
-#############################
-
-# ### checking WHO ACTO ---------------------------------------------------
-
-setwd("C:/Users/memslie/OneDrive - Australian Institute of Marine Science/Desktop/working folder/change in coral assemblages/Update with 2025 data_Oct 2025/comp21 half decadal models/models")
-
-who.mod <- readRDS(file='mod_ACTO_WH_O.rda')
-summary(who.mod)
-
-#plogis(-3.732)
-
-who <- comp2021_Oct2025_df_barplot |> 
-     filter(A_SECTOR=='WH' & SHELF=='O') |>
-     filter(COMP_2021=='ACTO') |> 
-     group_by(half_decade) |> 
-     summarise(cover=mean(cover))
 
 
-comp_summ <- long_series |> 
-  pivot_longer(cols=ACBX:S_POR_RUS,names_to = 'COMP_2021',values_to = 'cover') |> 
-  group_by(SECSHELF,half_decade,COMP_2021) |> 
-  summarise(mean=mean(cover),
-            sd=sd(cover),
-            n=n(),
-            se=sd/sqrt(n)) |> 
-  mutate(half_decade=factor(half_decade,levels=c('early_90s','late_90s','early_00s','late_00s','early_10s','late_10s','early_20s')))
-
-check.dat <- comp_summ |> 
-  filter(SECSHELF=='WH O',half_decade %in% c('early_90s','early_20s')) |>    #,COMP_2021 %in% c('ACBX','ACTO','G_POR_B','G_ECH_OTH')
-  arrange(SECSHELF,COMP_2021,half_decade) |> 
-  as.data.frame()
-
-ggplot(check.dat,aes(x=COMP_2021,y=mean,color=half_decade))+
-  geom_point(stat='identity',position=position_dodge(width=0.5))+
-  geom_errorbar(stat='identity',aes(ymin=mean-2*se,ymax=mean+2*se),width=0,position=position_dodge(width=0.5))

@@ -15,6 +15,24 @@ Fig 1
 - sectors.RData
 - towns.sf.RData
         
-Fig 2 -         
+Fig 2 
+- comp2021.w.RData
+
+Fig 3
+- long_series_full.RData
+- site.scores.combined_full.RData
+- vec.labels.RData
+
+Fig 4
+- site.scores.combined_full.RData
+- subregion_recovery_centroid_dist.RData
+
+Fig 5
+- comp2021_Oct2025.RData
+- group_cover_transect.RData
+- comp21_broad_groups_lookup.csv
+
+Fig 6
+- old.growth.weeds.RData
         
 
