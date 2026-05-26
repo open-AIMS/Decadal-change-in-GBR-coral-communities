@@ -1,7 +1,10 @@
 # Decadal-change-in-GBR-coral-communities
 Code in support of manuscript analyses
 
-The data associated with this repo are housed on Zenodo (insert link)
+The data associated with this repo are housed in a Figshare repository https://figshare.com/s/e469ed703629d2d0a785
+
+All analyses were comducted in R version 4.4.1
+
 
 In order to run the code, the specific datasets need to be added to the appropriate folders. these are: 
 
