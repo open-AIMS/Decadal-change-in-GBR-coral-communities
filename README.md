@@ -5,6 +5,10 @@ The data associated with this repo are housed in a Figshare repository https://f
 
 All analyses were comducted in R version 4.4.1
 
+##Code Functionality/analysis workflow 
+
+The analysis code implements a reproducible workflow for importing, cleaning and analysing long-term coral reef monitoring data. In brief, the scripts load benthic and coral community datasets, standardise taxonomic and sampling identifiers, remove incomplete records, and aggregate observations to the reef, site, transect or survey-year or half-decadal scale as required. The code then derives response variables including hard coral cover, coral genus cover, species richness and multivariate assemblage matrices. Statistical models are fitted to estimate temporal changes in cover, richness and assemblage composition while accounting for the hierarchical sampling design. Model outputs are used to calculate contrasts among pre-disturbance, post-disturbance and recovery periods, including uncertainty intervals and recovery probabilities. Additional scripts perform multivariate analyses of community composition, quantify compositional change through time, and generate all figures and supplementary tables reported in the manuscript.
+
 
 In order to run the code, the specific datasets need to be added to the appropriate folders. these are: 
 
@@ -38,4 +42,4 @@ Fig 5
 Fig 6
 - old.growth.weeds.RData
         
-
+Code for each figure is included in its separate file in this repo. 
